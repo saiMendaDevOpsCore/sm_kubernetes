@@ -1,0 +1,17 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PUSH",
+            "type": "shell",
+            "command": "(git add -A &>/dev/null || echo ADD FAILED) && (git commit -m Upload &>/dev/null || echo COMMIT FAILED ) && ( git push origin master &>/dev/null || echo PUSH FAILED ) && echo SUCCESS ",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+
+    ]
+}
